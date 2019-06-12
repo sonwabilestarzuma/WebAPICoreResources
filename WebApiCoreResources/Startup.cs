@@ -79,7 +79,7 @@ namespace WebApiCoreResources
 
                 Mapper.Initialize(Config =>
                 {
-                    Config.CreateMap<TalkModel, Talks>().ReverseMap();
+                    Config.CreateMap<TalkModel, Talk>().ReverseMap();
                 });
                 app.UseMvc(routes =>
                 {

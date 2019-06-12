@@ -22,7 +22,7 @@ namespace MyCodeCamp.Data
 
         public DbSet<Camp> Camps { get; set; }
         public DbSet<Speaker> Speakers { get; set; }
-        public DbSet<Talks> Talks { get; set; }
+        public DbSet<Talk> Talks { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -39,7 +39,7 @@ namespace MyCodeCamp.Data
               .Property(c => c.RowVersion)
               .ValueGeneratedOnAddOrUpdate()
               .IsConcurrencyToken();
-            builder.Entity<Talks>()
+            builder.Entity<Talk>()
               .Property(c => c.RowVersion)
               .ValueGeneratedOnAddOrUpdate()
               .IsConcurrencyToken();

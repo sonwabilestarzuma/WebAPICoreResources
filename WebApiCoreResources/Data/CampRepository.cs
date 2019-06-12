@@ -133,7 +133,7 @@ namespace WebApiCoreResources.Data
              .ToList();
         }
 
-        public Talks GetTalk(int talkId)
+        public Talk GetTalk(int talkId)
         {
             return _context.Talks
             .Include(t => t.Speaker)
@@ -143,7 +143,7 @@ namespace WebApiCoreResources.Data
             .FirstOrDefault();
         }
 
-        public IEnumerable<Talks> GetTalks(int speakerId)
+        public IEnumerable<Talk> GetTalks(int speakerId)
         {
             return _context.Talks
                    .Include(t => t.Speaker)

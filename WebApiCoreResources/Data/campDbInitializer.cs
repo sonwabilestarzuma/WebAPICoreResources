@@ -54,9 +54,9 @@ namespace WebApiCoreResources.Data
             PhoneNumber = "076 408 9743",
             HeadShotUrl = "https://images.app.goo.gl/DLGbbBu8axXfWRbk6",
             WebsiteUrl = "https://github.com/sonwabilestarzuma",
-            Talks = new List<Talks>()
+            Talks = new List<Talk>()
             {
-              new Talks()
+              new Talk()
               {
                 Title =  "How to do ASP.NET Core",
                 Abstract = "How to do ASP.NET Core",
@@ -66,7 +66,7 @@ namespace WebApiCoreResources.Data
                 Room = "245",
                 StartingTime = DateTime.Parse("14:30")
               },
-              new Talks()
+              new Talk()
               {
                 Title =  "How to do Angular 6",
                 Abstract = "How to do Angular 6",
@@ -88,9 +88,9 @@ namespace WebApiCoreResources.Data
             PhoneNumber = "076 408 9743",
             HeadShotUrl = "https://images.app.goo.gl/DLGbbBu8axXfWRbk6",
             WebsiteUrl = "https://github.com/sonwabilestarzuma",
-            Talks = new List<Talks>()
+            Talks = new List<Talk>()
             {
-              new Talks()
+              new Talk()
               {
                 Title =  "Managing a Consulting Business",
                 Abstract = "Managing a Consulting Business",
