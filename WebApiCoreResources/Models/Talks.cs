@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace WebApiCoreResources.Models
 {
-    public class Talk
+    public class Talks
     {
         public int Id { get; set; }
         public string Title { get; set; }

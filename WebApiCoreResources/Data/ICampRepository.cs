@@ -12,7 +12,7 @@ namespace WebApiCoreResources.Data
 
         void Add<T>(T models) where T : class;
         void Delete<T>(T models) where T : class;
-        Task<bool> SaveAllAscync();
+        //Task<bool> SaveAllAscync();
 
         // Camps
 
@@ -37,13 +37,13 @@ namespace WebApiCoreResources.Data
 
         // Talks
 
-        IEnumerable<Talk> GetTalks(int speakerId);
-        Talk GetTalk(int talkId);
+        IEnumerable<Talks> GetTalks(int speakerId);
+        Talks GetTalk(int talkId);
 
 
         // CampUser
 
         CampUser GetUser(string userName);
-
+        Task<bool> SaveAllAsync();
     }
 }

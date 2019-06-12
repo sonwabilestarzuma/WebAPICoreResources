@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MyCodeCamp.Data;
 
 namespace WebApiCoreResources.Migrations
 {
     [DbContext(typeof(CampContext))]
-    partial class CampContextModelSnapshot : ModelSnapshot
+    [Migration("20190612090043_AddDataToDatabase")]
+    partial class AddDataToDatabase
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -279,7 +281,7 @@ namespace WebApiCoreResources.Migrations
                     b.ToTable("Speakers");
                 });
 
-            modelBuilder.Entity("WebApiCoreResources.Models.Talks", b =>
+            modelBuilder.Entity("WebApiCoreResources.Models.Talk", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -386,7 +388,7 @@ namespace WebApiCoreResources.Migrations
                         .HasForeignKey("UserId");
                 });
 
-            modelBuilder.Entity("WebApiCoreResources.Models.Talks", b =>
+            modelBuilder.Entity("WebApiCoreResources.Models.Talk", b =>
                 {
                     b.HasOne("WebApiCoreResources.Models.Speaker", "Speaker")
                         .WithMany("Talks")

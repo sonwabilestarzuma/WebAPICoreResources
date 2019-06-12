@@ -18,7 +18,7 @@ namespace WebApiCoreResources.Models
         public string HeadShotUrl { get; set; }
         public CampUser User { get; set; }
 
-        public ICollection<Talk> Talks { get; set; }
+        public ICollection<Talks> Talks { get; set; }
         public Camp Camp { get; set; }
 
         public byte[] RowVersion { get; set; }

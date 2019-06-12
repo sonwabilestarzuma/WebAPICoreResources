@@ -133,7 +133,7 @@ namespace WebApiCoreResources.Data
              .ToList();
         }
 
-        public Talk GetTalk(int talkId)
+        public Talks GetTalk(int talkId)
         {
             return _context.Talks
             .Include(t => t.Speaker)
@@ -143,7 +143,7 @@ namespace WebApiCoreResources.Data
             .FirstOrDefault();
         }
 
-        public IEnumerable<Talk> GetTalks(int speakerId)
+        public IEnumerable<Talks> GetTalks(int speakerId)
         {
             return _context.Talks
                    .Include(t => t.Speaker)
@@ -156,14 +156,14 @@ namespace WebApiCoreResources.Data
         public CampUser GetUser(string userName)
         {
             return _context.Users
-                 .Include(u => u.Claims)
-                 .Include(u => u.Roles)
+               //  .Include(u => u.Claims)
+                // .Include(u => u.Roles)
                  .Where(u => u.UserName == userName)
                  .Cast<CampUser>()
                  .FirstOrDefault();
         }
 
-        public async Task<bool> SaveAllAscync()
+        public async Task<bool> SaveAllAsync()
         {
             return (await _context.SaveChangesAsync()) > 0;
         }

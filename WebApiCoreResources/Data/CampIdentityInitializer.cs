@@ -20,7 +20,7 @@ namespace WebApiCoreResources.Data
             _roleMgr = roleMgr;
         }
 
-        public async Task Seed()
+        public async Task EnsureSeedData()
         {
             var user = await _userMgr.FindByNameAsync("sonwabilestarzuma");
             
@@ -30,7 +30,7 @@ namespace WebApiCoreResources.Data
                 if(!(await _roleMgr.RoleExistsAsync("Admin")))
                 {
                     var role = new IdentityRole("Admin");
-                   role.Claims.Add(new IdentityRoleClaim<string>() { ClaimType = "IsAdmin", ClaimValue = "True" });
+                  // role.Claims.Add(new IdentityRoleClaim<string>() { ClaimType = "IsAdmin", ClaimValue = "True" });
                   
                     await _roleMgr.CreateAsync(role);
                 }
