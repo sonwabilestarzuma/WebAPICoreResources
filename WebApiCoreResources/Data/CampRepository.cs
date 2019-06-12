@@ -133,12 +133,12 @@ namespace WebApiCoreResources.Data
              .ToList();
         }
 
-        public Talk GetTalk(int talk)
+        public Talk GetTalk(int talkId)
         {
             return _context.Talks
             .Include(t => t.Speaker)
             .ThenInclude(s => s.Camp)
-            //.Where(t => t.Id == talkId)
+            .Where(t => t.Id == talkId)
             .OrderBy(t => t.Title)
             .FirstOrDefault();
         }
@@ -156,8 +156,8 @@ namespace WebApiCoreResources.Data
         public CampUser GetUser(string userName)
         {
             return _context.Users
-                 //.Include(u => u.Claims)
-               // .Include(u => u.Roles)
+                 .Include(u => u.Claims)
+                 .Include(u => u.Roles)
                  .Where(u => u.UserName == userName)
                  .Cast<CampUser>()
                  .FirstOrDefault();

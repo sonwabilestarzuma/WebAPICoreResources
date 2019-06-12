@@ -38,7 +38,7 @@ namespace WebApiCoreResources.Data
         // Talks
 
         IEnumerable<Talk> GetTalks(int speakerId);
-        Talk GetTalk(int talk);
+        Talk GetTalk(int talkId);
 
 
         // CampUser
